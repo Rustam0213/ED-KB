@@ -1,80 +1,128 @@
-h1, h2, h3, h4, h5, p{
-      font-family: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    --red: #E5322C;
+    --background: #efefef;
+    --text: #7a7a7a;
 }
 
-:root{
-      --color1: #0d6efd;
-      --color2: #eee;
-      --black: black;
+header {
+    font-family: "Teachers", monospace;
+    background-color: var(--background);
+    padding: 10px 0;
+    box-shadow: 0px 0px 5px var(--text);
 }
 
-header, footer{
-      background: rgb(21,120,184);
-      background: -moz-linear-gradient(90deg, rgba(21,120,184,1) 0%, rgba(9,9,121,1) 100%);
-      background: -webkit-linear-gradient(90deg, rgba(21,120,184,1) 0%, rgba(9,9,121,1) 100%);
-      background: linear-gradient(90deg, rgba(21,120,184,1) 0%, rgba(9,9,121,1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1578b8",endColorstr="#090979",GradientType=1);}
-
-.logo{
-      max-width: 270px;
-      max-height: 70px;
+.logo {
+    max-width: 100%;
+    height: auto;
 }
 
-.buttons{
-      padding: 8px;
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.header-btns{
-      max-width: 150px;
+.navigation .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
 }
 
-.mapa{
-      display: flex;
-      padding: 10px 0px 10px 0px ;
-      justify-content: center;
-      border: 2px solid black;
+.navigation .button {
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    text-align: center;
 }
 
-.kontakt{
-      border-radius: 2%;
-      background-color: #0d6efd;
+.navigation .line {
+    margin-top: -10px;
+    width: 0%;
+    height: 3px;
+    background-color: var(--text);
+    transition: 0.15s ease;
 }
 
-.kontakt h5{
-      margin: 20px 10px 10px 10px;
+.button:hover + .line {
+    width: 90%;
+    background-color: var(--red);
 }
 
-.kontakt h2{
-      padding: 10px;
-      border-radius: 6px 6px 0px 0px;
-      background-color: rgb(78, 146, 206);
+.button:hover {
+    color: #646464;
 }
 
-.kontakt-text{
-      color: rgb(39, 39, 39);
-      font-size: 16px;
+@media (max-width: 769px) {
+    .navigation {
+        flex-direction: column;
+    }
+    .navigation .block {
+        margin: 5px 0;
+    }
+    iframe {
+        max-width: 100%;
+    }
+    .contacts:hover #corner1 {
+        top: -10px;
+        left: -10px;
+    }
+    
+    .contacts:hover #corner2 {
+        bottom: -10px;
+        right: -10px;
+    }
 }
 
-.paragraph{
-      border: 2px solid #0d6efd;
-      max-width: 400px;
-      font-size: 20px;
+footer {
+    background-color: var(--background);
 }
 
-#home, #oferta{
-      background-color: var(--color2);
+iframe {
+    border-radius: 15px;
+    margin: 10px 30px 10px 0px;
+    transition: 0.3s ease;
 }
 
-.accordion{
-      max-width: 400px;
+iframe:hover {
+    box-shadow: 0px 0px 8px var(--red);
 }
 
-.list-group{
-      max-width: 300px;
+.map {
+    display: flex;
+    justify-content: center;
 }
 
-.cennik-txt{
-      max-width: 400px;
-      border: 2px solid var(--color1);
-      padding: 10px
+.contacts {
+    margin: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
+
+.corner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-left: 3px solid var(--red);
+    border-top: 3px solid var(--red);
+    transition: 0.3s ease;
+}
+
+#corner1 {
+    top: 10px;
+    left: 10px;
+}
+
+#corner2 {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+
+
