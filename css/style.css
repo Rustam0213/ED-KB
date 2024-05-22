@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
 
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --red: #E5322C;
     --background: #efefef;
@@ -41,7 +48,7 @@ header {
 
 .navigation .line {
     margin-top: -10px;
-    width: 0%;
+    width: 0;
     height: 3px;
     background-color: var(--text);
     transition: 0.15s ease;
@@ -53,10 +60,10 @@ header {
 }
 
 .button:hover {
-    color: #646464;
+    color: #545454;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
     .navigation {
         flex-direction: column;
     }
@@ -65,15 +72,6 @@ header {
     }
     iframe {
         max-width: 100%;
-    }
-    .contacts:hover #corner1 {
-        top: -10px;
-        left: -10px;
-    }
-    
-    .contacts:hover #corner2 {
-        bottom: -10px;
-        right: -10px;
     }
 }
 
@@ -84,16 +82,17 @@ footer {
 iframe {
     border-radius: 15px;
     margin: 10px 30px 10px 0px;
-    transition: 0.3s ease;
+    transition: 0.3s ease-out;
 }
 
-iframe:hover {
+footer:hover iframe {
     box-shadow: 0px 0px 8px var(--red);
 }
 
 .map {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .contacts {
@@ -111,18 +110,39 @@ iframe:hover {
     height: 50px;
     border-left: 3px solid var(--red);
     border-top: 3px solid var(--red);
-    transition: 0.3s ease;
+    transition: 0.3s ease-out;
 }
 
 #corner1 {
     top: 10px;
-    left: 10px;
+    left: 5px;
 }
 
 #corner2 {
-    bottom: 10px;
+    bottom: 5px;
     right: 10px;
     transform: rotate(180deg);
 }
 
+footer:hover #corner1 {
+    top: 5px;
+    left: 0px;
+}
 
+footer:hover #corner2 {
+    bottom: 0px;
+    right: 5px;
+}
+
+.links{
+    color: var(--text);
+    transition: 0.15s;
+}
+
+.links:hover{
+    color: #545454;
+}
+
+.red{
+    color: var(--red);
+}
